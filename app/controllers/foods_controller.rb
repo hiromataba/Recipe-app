@@ -1,9 +1,10 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: %i[show edit update destroy]
+  load_and_authorize_resource
+  before_action :set_food, only: %i[show destroy]
 
-  # GET /foods or /foods.json
+  # GET /foods
   def index
-    @foods = Food.all
+    @foods = current_user.foods
   end
 
   # GET /foods/new
@@ -11,7 +12,7 @@ class FoodsController < ApplicationController
     @food = Food.new
   end
 
-  # POST /foods or /foods.json
+  # POST /foods
   def create
     @food = current_user.foods.new(food_params)
 
@@ -24,7 +25,7 @@ class FoodsController < ApplicationController
     end
   end
 
-  # DELETE /foods/1 or /foods/1.json
+  # DELETE /foods/1
   def destroy
     @food.destroy
     respond_to do |format|
