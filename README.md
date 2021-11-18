@@ -13,9 +13,9 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 - PostgreSQL
 - Bulma CSS
 
-## Live Link
+## Live Demo
 
-[Heroku](https://hiro-recipe-app.herokuapp.com/users/sign_in)
+[Live Demo](https://hiro-recipe-app.herokuapp.com/users/sign_in)
 
 ## Getting Started
 
