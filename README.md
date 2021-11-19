@@ -63,7 +63,7 @@ rails s
 ### Test
 
 ```sh
-rspec
+rails spec
 ```
 
 ### Troubleshoot
