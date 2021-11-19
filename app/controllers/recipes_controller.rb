@@ -9,10 +9,8 @@ class RecipesController < ApplicationController
 
   # GET /public_recipes
   def public_recipes
-    @recipes = Recipe.get_public_recipes
+    @recipes = Recipe.gett_public_recipes
   end
-
-  
 
   # GET /recipes/1
   def show
