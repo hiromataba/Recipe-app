@@ -9,8 +9,10 @@ class RecipesController < ApplicationController
 
   # GET /public_recipes
   def public_recipes
-    @recipes = Recipe.includes(:user, :recipe_foods).where({ public: true }).order(created_at: :desc)
+    @recipes = Recipe.get_public_recipes
   end
+
+  
 
   # GET /recipes/1
   def show

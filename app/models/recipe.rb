@@ -12,4 +12,8 @@ class Recipe < ApplicationRecord
   def total_price
     recipe_foods.joins(:recipe, :food).sum('price * quantity')
   end
+
+  def self.get_public_recipes 
+    Recipe.includes(:user, :recipe_foods).where({ public: true }).order(created_at: :desc)
+  end
 end
